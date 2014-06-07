@@ -1,0 +1,31 @@
+<p ng-if="loading">Wait for it…</p>
+<ul
+  ng-if="!loading"
+  class="friends">
+  <li ng-repeat="friend in friends">
+    <img
+      src="{{ friend.cover.source }}"
+      width="50"
+      height="50"/>
+    <div class="ctn">
+      <div class="name">
+        {{ friend.name }}
+      </div>
+      <div class="lists">
+        <span ng-if="!getLists(friend).length">
+        Not listed
+        </span>
+        <span ng-if="getLists(friend).length">
+          Into : <span class="list" ng-repeat="list in lists = getLists(friend)">{{ list.title }}<span class="remove glyphicon glyphicon-remove-circle" ng-click="removeFriendFromList(friend, list)"></span><span ng-if="lists[$index+1]">, </span></span>
+        </span>
+        <span>
+        <button
+          class="btn"
+          title="Add to a list">
+          <span class="glyphicon glyphicon-plus" ng-click="add($event, friend)"></span>
+        </button>
+        </span>
+      </div>
+    </div>
+  </li>
+</ul>

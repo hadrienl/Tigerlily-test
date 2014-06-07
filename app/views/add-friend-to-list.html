@@ -1,0 +1,12 @@
+<form
+  role="form"
+  ng-controller="AddFriendToListCtrl">
+  <div class="form-group">
+    <select
+      class="form-control"
+      ng-model="list"
+      ng-options="list.title for list in lists"
+      ng-change="add()">
+    </select>
+  </div>
+</form>

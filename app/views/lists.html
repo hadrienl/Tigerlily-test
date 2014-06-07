@@ -1,0 +1,23 @@
+<ul class="lists">
+  <li ng-repeat="list in lists">
+    {{ list.title }}
+    <span
+      class="remove glyphicon glyphicon-remove-circle"
+      ng-click="remove(list)">
+    </span>
+  </li>
+  <li
+    ng-click="createList()">
+    <span ng-if="!editNewList" class="add"><span class="glyphicon glyphicon-plus"></span>New list</span>
+    <form
+      ng-if="editNewList"
+      ng-submit="createList(newTitle)">
+      <input
+        ng-model="newTitle"
+        focus>
+      <button
+        type="submit"
+        class="btn btn-primary">Create</button>
+    </form>
+  </li>
+</ul>

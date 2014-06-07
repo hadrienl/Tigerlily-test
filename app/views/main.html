@@ -1,0 +1,14 @@
+<choose-token
+  ng-if="!token"></choose-token>
+<div
+  ng-if="token"
+  class="row">
+  <div class="col-md-6">
+    <h2>Your friends</h2>
+    <friends-list></friends-list>
+  </div>
+  <div class="col-md-6">
+    <h2>Your local lists</h2>
+    <lists></lists>
+  </div>
+</div>
